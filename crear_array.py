@@ -20,7 +20,7 @@ class array:
         return iter(self.items)
 
     def __getitem__(self,index):
-        return self.items[index]
+        return str(self.items[index])
 
     def __setitem__(self,index,new_item):
         self.items[index] = new_item
@@ -35,6 +35,10 @@ class array:
         for i in range(self.capacity):
             count += self.items[i]
         return count
+    #Metodo para insertar elementos por medio del teclado al array
+    def __insert_elements__(self):
+        for i in range(self.capacity):
+            self.__setitem__(i,input("Ingresa un dato: "))
 
 
 
