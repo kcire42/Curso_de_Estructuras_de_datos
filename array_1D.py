@@ -13,8 +13,14 @@ class Array:
     def __len__(self)->int:
         return len(self.items)
     
-    def __insertion_by_index__(self,index,new_value):
-        self.items[index] = new_value
+    # def __insertion_by_index__(self,index,new_value):
+    #     self.items[index] = new_value
+    
+    def __setitem__(self,index,new_item):
+            self.items[index] = new_item
+    
+    def __getitem__(self,index):
+            return self.items[index]
 
     def __insertion_multiple_value__(self):
         for element in range(len(self.items)):
@@ -51,17 +57,17 @@ class Array:
 
 
 
-if __name__ == '__main__':
-    estacionamiento = Array(5)
-    print(estacionamiento.__len__())
-    #estacionamiento.__insertion_by_index__(0,5)
-    estacionamiento.__insertion_multiple_value__()
-    print(estacionamiento.__str__())
-    estacionamiento.__delete_element__(3)
-    print(estacionamiento.__str__())
-    estacionamiento.__search_element__(2)
-    estacionamiento.__search_element__(6)
-    estacionamiento.__print_by_element__()
-    estacionamiento.__replace_element__(1,6)
-    print(estacionamiento.__str__())
+# if __name__ == '__main__':
+#     estacionamiento = Array(5)
+#     print(estacionamiento.__len__())
+#     #estacionamiento.__insertion_by_index__(0,5)
+#     estacionamiento.__insertion_multiple_value__()
+#     print(estacionamiento.__str__())
+#     estacionamiento.__delete_element__(3)
+#     print(estacionamiento.__str__())
+#     estacionamiento.__search_element__(2)
+#     estacionamiento.__search_element__(6)
+#     estacionamiento.__print_by_element__()
+#     estacionamiento.__replace_element__(1,6)
+#     print(estacionamiento.__str__())
 
