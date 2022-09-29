@@ -13,8 +13,6 @@ class Array:
     def __len__(self)->int:
         return len(self.items)
     
-    # def __insertion_by_index__(self,index,new_value):
-    #     self.items[index] = new_value
     
     def __setitem__(self,index,new_item):
             self.items[index] = new_item

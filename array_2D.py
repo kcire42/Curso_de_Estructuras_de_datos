@@ -22,6 +22,11 @@ class Array_2D:
             result += "\n"
         return str(result)
 
+    def __insertion_elements__(self):
+        for row in range(self.__get_rows__()):
+            for column in range(self.__get_columns__()):
+                self.data[row][column] = input(f"Inserte el elemento de la posicion {row} {column}: ")
+
 
 
 
@@ -29,6 +34,9 @@ if __name__ == '__main__':
     prueba = Array_2D(2,3)
     print(prueba.__get_rows__())
     print(prueba.__get_columns__())
-    print(prueba.__str__())         
+    print(prueba.__str__()) 
+    prueba.__insertion_elements__()
+    print(prueba.__str__()) 
+       
 
 
