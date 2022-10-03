@@ -44,7 +44,8 @@ class Array:
         for element in self.items:
             print(element)
             
-            
+    def __invert_array__(self):
+        return self.items[::-1] 
 
     
     def __str__(self) -> str:
@@ -55,17 +56,18 @@ class Array:
 
 
 
-# if __name__ == '__main__':
-#     estacionamiento = Array(5)
-#     print(estacionamiento.__len__())
-#     #estacionamiento.__insertion_by_index__(0,5)
-#     estacionamiento.__insertion_multiple_value__()
-#     print(estacionamiento.__str__())
-#     estacionamiento.__delete_element__(3)
-#     print(estacionamiento.__str__())
-#     estacionamiento.__search_element__(2)
-#     estacionamiento.__search_element__(6)
-#     estacionamiento.__print_by_element__()
-#     estacionamiento.__replace_element__(1,6)
-#     print(estacionamiento.__str__())
+if __name__ == '__main__':
+    estacionamiento = Array(5)
+    print(estacionamiento.__len__())
+    #estacionamiento.__insertion_by_index__(0,5)
+    estacionamiento.__insertion_multiple_value__()
+    print(estacionamiento.__str__())
+    estacionamiento.__delete_element__(3)
+    print(estacionamiento.__str__())
+    estacionamiento.__search_element__(2)
+    estacionamiento.__search_element__(6)
+    estacionamiento.__print_by_element__()
+    estacionamiento.__replace_element__(1,6)
+    print(estacionamiento.__str__())
+    print(estacionamiento.__invert_array__())
 

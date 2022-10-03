@@ -27,6 +27,8 @@ class Array_2D:
             for column in range(self.__get_columns__()):
                 self.data[row][column] = input(f"Inserte el elemento de la posicion {row} {column}: ")
 
+    
+
 
 
 
