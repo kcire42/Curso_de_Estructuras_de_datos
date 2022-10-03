@@ -27,7 +27,13 @@ class Array_2D:
             for column in range(self.__get_columns__()):
                 self.data[row][column] = input(f"Inserte el elemento de la posicion {row} {column}: ")
 
-    
+    def __search_element__(self,value):
+        for row in range(self.__get_rows__()):
+            for column in range(self.__get_columns__()):
+                if int(self.data[row][column]) == value:
+                    print(f"Si se encuentra el {value} en la ubicacion fila {row} columna {column}")
+        
+                
 
 
 
@@ -39,6 +45,7 @@ if __name__ == '__main__':
     print(prueba.__str__()) 
     prueba.__insertion_elements__()
     print(prueba.__str__()) 
+    prueba.__search_element__(10)
        
 
 
