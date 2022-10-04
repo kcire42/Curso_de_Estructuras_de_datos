@@ -1,7 +1,5 @@
 
 #DEFINIMOS NUESTRA CLASE NODO 
-import re
-
 
 class Node:
 

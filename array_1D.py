@@ -2,6 +2,9 @@
 #LO PRIMERO QUE DEBO DE HACER ES DEFINIR MI CLASE DONDE TENDRE MI ESTRUCTURA DE DATOS 
 
 
+import re
+
+
 class Array:
     
     def __init__(self,length,fill_value = None) -> None:
@@ -47,6 +50,13 @@ class Array:
     def __invert_array__(self):
         return self.items[::-1] 
 
+    def __sort_array__(self,sense:bool):
+        if sense == True:
+            return sorted(self.items,reverse=sense)
+        else:
+            return sorted(self.items,reverse=sense)
+
+
     
     def __str__(self) -> str:
         return str(self.items)
@@ -62,6 +72,8 @@ if __name__ == '__main__':
     #estacionamiento.__insertion_by_index__(0,5)
     estacionamiento.__insertion_multiple_value__()
     print(estacionamiento.__str__())
+    print(estacionamiento.__sort_array__(True))
+    print(estacionamiento.__sort_array__(False))
     estacionamiento.__delete_element__(3)
     print(estacionamiento.__str__())
     estacionamiento.__search_element__(2)
@@ -70,4 +82,5 @@ if __name__ == '__main__':
     estacionamiento.__replace_element__(1,6)
     print(estacionamiento.__str__())
     print(estacionamiento.__invert_array__())
+    
 
