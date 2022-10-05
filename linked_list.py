@@ -40,12 +40,35 @@ class Linked_List:
         self.head = node 
         
     def __insert_last_pos__(self,new_value):
+        node = Node(new_value)
         if self.head is None:
-            self.head = new_value
+            print("next")
+            self.head = node
             return
-        for current_node in self:
-            pass
-        current_node.next = node
+        else:
+            for current_node in self:
+                print(current_node)
+                pass
+            
+            current_node.next = node
+
+    def add_after(self, target_node, new_value):
+        new_node = Node(new_value)
+        if self.head is None:
+            raise Exception("LA LINKED LIST ESTA VACIA")
+        else:
+            for current_node in self:
+                if current_node.data == target_node:
+                    # new_node.next == current_node.next
+                    # current_node.next = new_node
+                    new_node.next = current_node.next
+                    current_node.next = new_node
+                    return
+            raise Exception("NODO NO SE ENCUENTRA")
+
+    def add_before(self,target_node,new_value):
+        pass
+
         
         
 
@@ -63,12 +86,26 @@ if __name__ == '__main__':
     third = Node("c")
     second.next = third
     print(llist)
-    llist_1 = Linked_List(["A","B","C","D","E"])
+    llist_1 = Linked_List(["B","C","D","E","F"])
     print(llist_1)
     for node in llist_1:
         print(node)
     print(llist_1)
-    llist_1.__insert_first_pos__("F")
+    llist_1.__insert_first_pos__("A")
     print(llist_1)
-    llist_1.__insert_last_pos__("F")
+    llist_1.__insert_last_pos__("G")
     print(llist_1)
+    llist_1.add_after("C","C1")
+    print(llist_1)
+    llist_1.add_after("C2","C1")
+    llist_2 = Linked_List()
+    llist_2.__insert_last_pos__("Hola")
+    print(llist_2)
+    
+    # llist_4 = Linked_List()
+    # llist_4.add_after(1,"I")
+
+
+
+    
+
