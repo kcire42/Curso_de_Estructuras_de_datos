@@ -67,7 +67,32 @@ class Linked_List:
             raise Exception("NODO NO SE ENCUENTRA")
 
     def add_before(self,target_node,new_value):
-        pass
+        new_node = Node(new_value)
+        if self.head is None:
+            raise Exception("LA LINKED LIST ESTA VACIA")
+        else:
+            prev_node = self.head #PUNTERO QUE APUNTA A LA CABEZERA
+            #print(prev_node.data)
+            for node in self: #RECORRIDO DE MIS NODOS
+                print(f"puntero a cabezera{prev_node.data}")
+                if node.data == target_node: #COMPARACION DE OBJETIVO DE NODOS Y ASIGNACION DEL NUEVO 
+                    prev_node.next = new_node
+                    new_node.next = node
+                    return
+                prev_node = node
+            raise Exception("NODO NO SE ENCUENTRA")
+                
+    def remove_node(self,delete_node):
+        if self.head is None:
+            raise Exception("LA LINKED LIST ESTA VACIA")
+        else:
+            prev_node = self.head
+            for node in self:
+                if node.data == delete_node:
+                    prev_node.next = node.next
+                    return
+                prev_node = node
+            raise Exception("NODO NO SE ENCUENTRA")
 
         
         
@@ -97,10 +122,15 @@ if __name__ == '__main__':
     print(llist_1)
     llist_1.add_after("C","C1")
     print(llist_1)
-    llist_1.add_after("C2","C1")
-    llist_2 = Linked_List()
-    llist_2.__insert_last_pos__("Hola")
-    print(llist_2)
+    llist_1.add_before("D","C0")
+    print(llist_1)
+    llist_1.remove_node("C0")
+    print(llist_1)
+    #llist_1.add_after("C2","C1")
+    
+    # llist_2 = Linked_List()
+    # llist_2.__insert_last_pos__("Hola")
+    # print(llist_2)
     
     # llist_4 = Linked_List()
     # llist_4.add_after(1,"I")
