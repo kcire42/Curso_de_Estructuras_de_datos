@@ -7,6 +7,7 @@ class Linked_List:
         self.head = None
         if nodes is not None:
             node = Node(data = nodes.pop(0))
+            print(node)
             self.head = node
             for element in nodes:
                 node.next = Node(data=element)
