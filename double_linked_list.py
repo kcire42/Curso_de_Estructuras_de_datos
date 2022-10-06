@@ -13,4 +13,6 @@ class Double_Linked_List:
                 node_2 = node.next
                 node_2.previous = node
                 node = node.next
+
+    
                 
