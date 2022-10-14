@@ -1,3 +1,4 @@
+from multiprocessing import dummy
 from node_two_directions import Node
 
 class Double_Linked_List:
@@ -30,6 +31,26 @@ class Double_Linked_List:
             yield  node
             node = node.next
 
+    def __find__(self,target_node):
+        for node in self:
+            if node.data == target_node:
+                print(f"nodo previo {node.previous} nodo actual {node.data} node posterior {node.next}")
+
+    def __add_after__(self,target_node,new_node):
+        new_node = Node(new_node)
+        if self.head is None:
+            raise Exception ("LA DOUBLE LINK LIST ESTA VACIA")
+        else:
+            for node in self:
+                if node.data == target_node:
+                    new_node.next = node.next
+                    node.next = new_node
+                    new_node.previous = node
+                    test = new_node.next
+                    test.previous = new_node
+                    
+
+
     
 if __name__ == '__main__':
     llist_1 = Double_Linked_List(["B","C","D","E","F"])
@@ -44,6 +65,9 @@ if __name__ == '__main__':
     third.previous = second
     print(llist)
     print(llist_1)
-
+    llist_1.__find__("D")
+    llist_1.__add_after__("D","D1")
+    print(llist_1)
+    llist_1.__find__("E")
     
                 
