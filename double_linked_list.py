@@ -48,7 +48,33 @@ class Double_Linked_List:
                     new_node.previous = node
                     test = new_node.next
                     test.previous = new_node
-                    
+
+    def __add_before__(self,target_node,new_node):
+        new_node = Node(new_node)
+        if self.head is None:
+            raise Exception ("LA DOUBLE LINK LIST ESTA VACIA")
+        else:
+            for node in self:
+                if node.data == target_node:
+                    before_node = node.previous
+                    before_node.next = new_node
+                    new_node.previous = before_node
+                    new_node.next = node
+                    node.previous = new_node
+
+
+    def __delete__(self,target_node):
+        if self.head is None:
+            raise Exception ("LA DOUBLE LINK LIST ESTA VACIA")
+        else:
+            for node in self:
+                if node.data == target_node:
+                    after_node = node.next
+                    before_node = node.previous
+                    before_node.next = after_node
+                    after_node.previous = before_node
+
+
 
 
     
@@ -68,6 +94,11 @@ if __name__ == '__main__':
     llist_1.__find__("D")
     llist_1.__add_after__("D","D1")
     print(llist_1)
-    llist_1.__find__("E")
+    llist_1.__find__("F")
+    llist_1.__add_before__("D","D0")
+    print(llist_1)
+    llist_1.__find__("D0")
+    llist_1.__delete__("D0")
+    print(llist_1)
     
                 
