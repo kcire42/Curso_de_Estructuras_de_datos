@@ -57,10 +57,7 @@ class Stacks:
             dummy = element
     #Last in first out
     def __delete_lifo__(self):
-        first = self.superior
-        print(first.data)
-        first = first.next
-        print(first)
+        self.superior = self.superior.next
         
 
 
